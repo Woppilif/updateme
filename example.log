@@ -1,3 +1,377 @@
 2019-10-23 17:20:41,359  Using selector: SelectSelector
 2019-10-23 17:21:10,468  Using selector: SelectSelector
 2019-10-23 17:21:19,937  Using selector: SelectSelector
+2019-10-23 17:46:08,802  Using selector: SelectSelector
+2019-10-23 17:46:19,954  client - state = CONNECTING
+2019-10-23 17:46:19,954  client - event = connection_made(<_SelectorSocketTransport fd=596 read=idle write=<idle, bufsize=0>>)
+2019-10-23 17:46:19,955  client > GET /ws/chat/1/ HTTP/1.1
+2019-10-23 17:46:19,955  client > Headers([('Host', 'www.ewtm.ru'), ('Upgrade', 'websocket'), ('Connection', 'Upgrade'), ('Sec-WebSocket-Key', 'hNWWmuzp/ehh40ybSszRJQ=='), ('Sec-WebSocket-Version', '13'), ('Sec-WebSocket-Extensions', 'permessage-deflate; client_max_window_bits'), ('User-Agent', 'Python/3.7 websockets/8.0.2')])
+2019-10-23 17:46:20,060  client < HTTP/1.1 101 Switching Protocols
+2019-10-23 17:46:20,060  client < Headers([('Server', 'Daphne'), ('Upgrade', 'WebSocket'), ('Connection', 'Upgrade'), ('Sec-WebSocket-Accept', '/GLRO8j3RB7VCsKtC9/PR5l5xI8=')])
+2019-10-23 17:46:20,060  client - state = OPEN
+2019-10-23 17:46:40,063  client > Frame(fin=True, opcode=9, data=b'\x1f\xd2\xc33', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:46:40,130  client < Frame(fin=True, opcode=10, data=b'\x1f\xd2\xc33', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:46:40,131  client - received solicited pong: 1fd2c333
+2019-10-23 17:46:42,013  client < Frame(fin=True, opcode=9, data=b'accF', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:46:42,013  client - received ping, sending pong: 61636346
+2019-10-23 17:46:42,013  client > Frame(fin=True, opcode=10, data=b'accF', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:47:00,123  client > Frame(fin=True, opcode=9, data=b'\xb2\x08\x90\xd7', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:47:00,192  client < Frame(fin=True, opcode=10, data=b'\xb2\x08\x90\xd7', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:47:00,192  client - received solicited pong: b20890d7
+2019-10-23 17:47:04,154  client < Frame(fin=True, opcode=9, data=b'rJG4', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:47:04,154  client - received ping, sending pong: 724a4734
+2019-10-23 17:47:04,155  client > Frame(fin=True, opcode=10, data=b'rJG4', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:47:20,186  client > Frame(fin=True, opcode=9, data=b'\xca\xa1\xb8\xdd', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:47:20,270  client < Frame(fin=True, opcode=10, data=b'\xca\xa1\xb8\xdd', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:47:20,270  client - received solicited pong: caa1b8dd
+2019-10-23 17:47:20,351  client < Frame(fin=True, opcode=1, data=b'{"message": "{\\"message\\":\\"open-code-presented-here\\"}"}', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:47:20,352  Wrong APP KEY
+2019-10-23 17:47:20,352  client - state = CLOSING
+2019-10-23 17:47:20,352  client > Frame(fin=True, opcode=8, data=b'\x03\xe8', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:47:20,421  client < Frame(fin=True, opcode=8, data=b'\x03\xe8', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:47:20,421  client - event = eof_received()
+2019-10-23 17:47:20,422  client - event = connection_lost(None)
+2019-10-23 17:47:20,422  client - state = CLOSED
+2019-10-23 17:47:20,422  client x code = 1000, reason = [no reason]
+2019-10-23 17:47:20,485  client - state = CONNECTING
+2019-10-23 17:47:20,485  client - event = connection_made(<_SelectorSocketTransport fd=596 read=idle write=<idle, bufsize=0>>)
+2019-10-23 17:47:20,486  client > GET /ws/chat/1/ HTTP/1.1
+2019-10-23 17:47:20,486  client > Headers([('Host', 'www.ewtm.ru'), ('Upgrade', 'websocket'), ('Connection', 'Upgrade'), ('Sec-WebSocket-Key', 'XJkjxqvynUtJUQHrDXCQ8Q=='), ('Sec-WebSocket-Version', '13'), ('Sec-WebSocket-Extensions', 'permessage-deflate; client_max_window_bits'), ('User-Agent', 'Python/3.7 websockets/8.0.2')])
+2019-10-23 17:47:21,050  client < HTTP/1.1 101 Switching Protocols
+2019-10-23 17:47:21,050  client < Headers([('Server', 'Daphne'), ('Upgrade', 'WebSocket'), ('Connection', 'Upgrade'), ('Sec-WebSocket-Accept', 'V4zAV7Nh77miLCoMXlrNKQ2WiIA=')])
+2019-10-23 17:47:21,050  client - state = OPEN
+2019-10-23 17:47:21,193  client < Frame(fin=True, opcode=1, data=b'{"message": "{\\"message\\":\\"open-code-presented-here\\"}"}', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:47:21,194  Wrong APP KEY
+2019-10-23 17:47:21,194  client - state = CLOSING
+2019-10-23 17:47:21,194  client > Frame(fin=True, opcode=8, data=b'\x03\xe8', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:47:21,253  client < Frame(fin=True, opcode=8, data=b'\x03\xe8', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:47:21,257  client - event = eof_received()
+2019-10-23 17:47:21,258  client - event = connection_lost(None)
+2019-10-23 17:47:21,258  client - state = CLOSED
+2019-10-23 17:47:21,258  client x code = 1000, reason = [no reason]
+2019-10-23 17:47:21,357  client - state = CONNECTING
+2019-10-23 17:47:21,357  client - event = connection_made(<_SelectorSocketTransport fd=596 read=idle write=<idle, bufsize=0>>)
+2019-10-23 17:47:21,358  client > GET /ws/chat/1/ HTTP/1.1
+2019-10-23 17:47:21,358  client > Headers([('Host', 'www.ewtm.ru'), ('Upgrade', 'websocket'), ('Connection', 'Upgrade'), ('Sec-WebSocket-Key', 'FDzHXJTkKhZS1XklzoImFQ=='), ('Sec-WebSocket-Version', '13'), ('Sec-WebSocket-Extensions', 'permessage-deflate; client_max_window_bits'), ('User-Agent', 'Python/3.7 websockets/8.0.2')])
+2019-10-23 17:47:21,469  client < HTTP/1.1 101 Switching Protocols
+2019-10-23 17:47:21,469  client < Headers([('Server', 'Daphne'), ('Upgrade', 'WebSocket'), ('Connection', 'Upgrade'), ('Sec-WebSocket-Accept', 'a6FYSx8ZL3+2J/lFh8y3xcYWouE=')])
+2019-10-23 17:47:21,470  client - state = OPEN
+2019-10-23 17:47:21,475  client < Frame(fin=True, opcode=1, data=b'{"message": "{\\"message\\":\\"open-code-presented-here\\"}"}', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:47:21,476  Wrong APP KEY
+2019-10-23 17:47:21,476  client - state = CLOSING
+2019-10-23 17:47:21,477  client > Frame(fin=True, opcode=8, data=b'\x03\xe8', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:47:21,553  client < Frame(fin=True, opcode=8, data=b'\x03\xe8', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:47:21,554  client - event = eof_received()
+2019-10-23 17:47:21,554  client - event = connection_lost(None)
+2019-10-23 17:47:21,554  client - state = CLOSED
+2019-10-23 17:47:21,555  client x code = 1000, reason = [no reason]
+2019-10-23 17:47:21,625  client - state = CONNECTING
+2019-10-23 17:47:21,626  client - event = connection_made(<_SelectorSocketTransport fd=596 read=idle write=<idle, bufsize=0>>)
+2019-10-23 17:47:21,626  client > GET /ws/chat/1/ HTTP/1.1
+2019-10-23 17:47:21,627  client > Headers([('Host', 'www.ewtm.ru'), ('Upgrade', 'websocket'), ('Connection', 'Upgrade'), ('Sec-WebSocket-Key', 'T3614R/3XXU7zKDN9lii1A=='), ('Sec-WebSocket-Version', '13'), ('Sec-WebSocket-Extensions', 'permessage-deflate; client_max_window_bits'), ('User-Agent', 'Python/3.7 websockets/8.0.2')])
+2019-10-23 17:47:21,714  client < HTTP/1.1 101 Switching Protocols
+2019-10-23 17:47:21,714  client < Headers([('Server', 'Daphne'), ('Upgrade', 'WebSocket'), ('Connection', 'Upgrade'), ('Sec-WebSocket-Accept', '9OIP4SyJOi5lC+BYwSlPh5Q5oko=')])
+2019-10-23 17:47:21,714  client - state = OPEN
+2019-10-23 17:47:21,808  client < Frame(fin=True, opcode=1, data=b'{"message": "{\\"message\\":\\"open-code-presented-here\\"}"}', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:47:21,809  Wrong APP KEY
+2019-10-23 17:47:21,810  client - state = CLOSING
+2019-10-23 17:47:21,810  client > Frame(fin=True, opcode=8, data=b'\x03\xe8', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:47:21,901  client < Frame(fin=True, opcode=8, data=b'\x03\xe8', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:47:21,902  client - event = eof_received()
+2019-10-23 17:47:21,902  client - event = connection_lost(None)
+2019-10-23 17:47:21,902  client - state = CLOSED
+2019-10-23 17:47:21,903  client x code = 1000, reason = [no reason]
+2019-10-23 17:47:21,983  client - state = CONNECTING
+2019-10-23 17:47:21,983  client - event = connection_made(<_SelectorSocketTransport fd=596 read=idle write=<idle, bufsize=0>>)
+2019-10-23 17:47:21,984  client > GET /ws/chat/1/ HTTP/1.1
+2019-10-23 17:47:21,984  client > Headers([('Host', 'www.ewtm.ru'), ('Upgrade', 'websocket'), ('Connection', 'Upgrade'), ('Sec-WebSocket-Key', 'BrG15ZBaXYzhVGfyNOBZEA=='), ('Sec-WebSocket-Version', '13'), ('Sec-WebSocket-Extensions', 'permessage-deflate; client_max_window_bits'), ('User-Agent', 'Python/3.7 websockets/8.0.2')])
+2019-10-23 17:47:22,087  client < HTTP/1.1 101 Switching Protocols
+2019-10-23 17:47:22,087  client < Headers([('Server', 'Daphne'), ('Upgrade', 'WebSocket'), ('Connection', 'Upgrade'), ('Sec-WebSocket-Accept', 'CbtFgAUs2QSCR3XAiAUJ2iAY2NU=')])
+2019-10-23 17:47:22,088  client - state = OPEN
+2019-10-23 17:47:42,089  client > Frame(fin=True, opcode=9, data=b"'\x16vd", rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:47:42,166  client < Frame(fin=True, opcode=10, data=b"'\x16vd", rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:47:42,167  client - received solicited pong: 27167664
+2019-10-23 17:47:44,007  client < Frame(fin=True, opcode=9, data=b'y/J2', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:47:44,007  client - received ping, sending pong: 792f4a32
+2019-10-23 17:47:44,008  client > Frame(fin=True, opcode=10, data=b'y/J2', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:47:59,714  client < Frame(fin=True, opcode=1, data=b'{"message": "{\\"message\\":\\"update\\"}"}', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:47:59,715  Wrong APP KEY
+2019-10-23 17:47:59,715  client - state = CLOSING
+2019-10-23 17:47:59,715  client > Frame(fin=True, opcode=8, data=b'\x03\xe8', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:47:59,787  client < Frame(fin=True, opcode=8, data=b'\x03\xe8', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:47:59,788  client - event = eof_received()
+2019-10-23 17:47:59,788  client - event = connection_lost(None)
+2019-10-23 17:47:59,788  client - state = CLOSED
+2019-10-23 17:47:59,789  client x code = 1000, reason = [no reason]
+2019-10-23 17:47:59,857  client - state = CONNECTING
+2019-10-23 17:47:59,858  client - event = connection_made(<_SelectorSocketTransport fd=596 read=idle write=<idle, bufsize=0>>)
+2019-10-23 17:47:59,858  client > GET /ws/chat/1/ HTTP/1.1
+2019-10-23 17:47:59,858  client > Headers([('Host', 'www.ewtm.ru'), ('Upgrade', 'websocket'), ('Connection', 'Upgrade'), ('Sec-WebSocket-Key', 'bvKMSg79mwIrmt5KwglCHQ=='), ('Sec-WebSocket-Version', '13'), ('Sec-WebSocket-Extensions', 'permessage-deflate; client_max_window_bits'), ('User-Agent', 'Python/3.7 websockets/8.0.2')])
+2019-10-23 17:47:59,942  client < HTTP/1.1 101 Switching Protocols
+2019-10-23 17:47:59,942  client < Headers([('Server', 'Daphne'), ('Upgrade', 'WebSocket'), ('Connection', 'Upgrade'), ('Sec-WebSocket-Accept', 'ezbSVWibQZROOIMZf6nMWu1w/QM=')])
+2019-10-23 17:47:59,942  client - state = OPEN
+2019-10-23 17:48:01,598  client < Frame(fin=True, opcode=1, data=b'{"message": "{\\"message\\":\\"update\\"}"}', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:48:01,599  Wrong APP KEY
+2019-10-23 17:48:01,599  client - state = CLOSING
+2019-10-23 17:48:01,600  client > Frame(fin=True, opcode=8, data=b'\x03\xe8', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:48:01,670  client < Frame(fin=True, opcode=8, data=b'\x03\xe8', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:48:01,671  client - event = eof_received()
+2019-10-23 17:48:01,671  client - event = connection_lost(None)
+2019-10-23 17:48:01,672  client - state = CLOSED
+2019-10-23 17:48:01,672  client x code = 1000, reason = [no reason]
+2019-10-23 17:48:01,747  client - state = CONNECTING
+2019-10-23 17:48:01,748  client - event = connection_made(<_SelectorSocketTransport fd=792 read=idle write=<idle, bufsize=0>>)
+2019-10-23 17:48:01,749  client > GET /ws/chat/1/ HTTP/1.1
+2019-10-23 17:48:01,749  client > Headers([('Host', 'www.ewtm.ru'), ('Upgrade', 'websocket'), ('Connection', 'Upgrade'), ('Sec-WebSocket-Key', 'NEkmX4jXI361NfO40gf9zA=='), ('Sec-WebSocket-Version', '13'), ('Sec-WebSocket-Extensions', 'permessage-deflate; client_max_window_bits'), ('User-Agent', 'Python/3.7 websockets/8.0.2')])
+2019-10-23 17:48:01,830  client < HTTP/1.1 101 Switching Protocols
+2019-10-23 17:48:01,830  client < Headers([('Server', 'Daphne'), ('Upgrade', 'WebSocket'), ('Connection', 'Upgrade'), ('Sec-WebSocket-Accept', 'QLnJ51pHu8C0nvFrVNWaBVjtIro=')])
+2019-10-23 17:48:01,830  client - state = OPEN
+2019-10-23 17:48:02,666  client < Frame(fin=True, opcode=1, data=b'{"message": "{\\"message\\":\\"update\\"}"}', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:48:02,667  Wrong APP KEY
+2019-10-23 17:48:02,667  client - state = CLOSING
+2019-10-23 17:48:02,668  client > Frame(fin=True, opcode=8, data=b'\x03\xe8', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:48:02,741  client < Frame(fin=True, opcode=8, data=b'\x03\xe8', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:48:02,742  client - event = eof_received()
+2019-10-23 17:48:02,743  client - event = connection_lost(None)
+2019-10-23 17:48:02,743  client - state = CLOSED
+2019-10-23 17:48:02,743  client x code = 1000, reason = [no reason]
+2019-10-23 17:48:02,805  client - state = CONNECTING
+2019-10-23 17:48:02,805  client - event = connection_made(<_SelectorSocketTransport fd=792 read=idle write=<idle, bufsize=0>>)
+2019-10-23 17:48:02,806  client > GET /ws/chat/1/ HTTP/1.1
+2019-10-23 17:48:02,806  client > Headers([('Host', 'www.ewtm.ru'), ('Upgrade', 'websocket'), ('Connection', 'Upgrade'), ('Sec-WebSocket-Key', 'sDPhKUaWdw5rltzliqYKmA=='), ('Sec-WebSocket-Version', '13'), ('Sec-WebSocket-Extensions', 'permessage-deflate; client_max_window_bits'), ('User-Agent', 'Python/3.7 websockets/8.0.2')])
+2019-10-23 17:48:02,878  client < HTTP/1.1 101 Switching Protocols
+2019-10-23 17:48:02,878  client < Headers([('Server', 'Daphne'), ('Upgrade', 'WebSocket'), ('Connection', 'Upgrade'), ('Sec-WebSocket-Accept', 'fCsL/6He9yOTqbO0qLDrc3ue/PE=')])
+2019-10-23 17:48:02,879  client - state = OPEN
+2019-10-23 17:48:02,990  client < Frame(fin=True, opcode=1, data=b'{"message": "{\\"message\\":\\"update\\"}"}', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:48:02,991  Wrong APP KEY
+2019-10-23 17:48:02,991  client - state = CLOSING
+2019-10-23 17:48:02,992  client > Frame(fin=True, opcode=8, data=b'\x03\xe8', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:48:03,060  client < Frame(fin=True, opcode=8, data=b'\x03\xe8', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:48:03,060  client - event = eof_received()
+2019-10-23 17:48:03,061  client - event = connection_lost(None)
+2019-10-23 17:48:03,061  client - state = CLOSED
+2019-10-23 17:48:03,062  client x code = 1000, reason = [no reason]
+2019-10-23 17:48:03,137  client - state = CONNECTING
+2019-10-23 17:48:03,137  client - event = connection_made(<_SelectorSocketTransport fd=792 read=idle write=<idle, bufsize=0>>)
+2019-10-23 17:48:03,138  client > GET /ws/chat/1/ HTTP/1.1
+2019-10-23 17:48:03,138  client > Headers([('Host', 'www.ewtm.ru'), ('Upgrade', 'websocket'), ('Connection', 'Upgrade'), ('Sec-WebSocket-Key', 'BU87XO3UpNCiTbF6BF4M7A=='), ('Sec-WebSocket-Version', '13'), ('Sec-WebSocket-Extensions', 'permessage-deflate; client_max_window_bits'), ('User-Agent', 'Python/3.7 websockets/8.0.2')])
+2019-10-23 17:48:03,218  client < HTTP/1.1 101 Switching Protocols
+2019-10-23 17:48:03,218  client < Headers([('Server', 'Daphne'), ('Upgrade', 'WebSocket'), ('Connection', 'Upgrade'), ('Sec-WebSocket-Accept', 'JGSIgyRuI5eSZQkz6QbUe8Xe6P4=')])
+2019-10-23 17:48:03,218  client - state = OPEN
+2019-10-23 17:48:03,334  client < Frame(fin=True, opcode=1, data=b'{"message": "{\\"message\\":\\"update\\"}"}', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:48:03,335  Wrong APP KEY
+2019-10-23 17:48:03,335  client - state = CLOSING
+2019-10-23 17:48:03,336  client > Frame(fin=True, opcode=8, data=b'\x03\xe8', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:48:03,404  client < Frame(fin=True, opcode=8, data=b'\x03\xe8', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:48:03,404  client - event = eof_received()
+2019-10-23 17:48:03,405  client - event = connection_lost(None)
+2019-10-23 17:48:03,405  client - state = CLOSED
+2019-10-23 17:48:03,405  client x code = 1000, reason = [no reason]
+2019-10-23 17:48:03,475  client - state = CONNECTING
+2019-10-23 17:48:03,475  client - event = connection_made(<_SelectorSocketTransport fd=792 read=idle write=<idle, bufsize=0>>)
+2019-10-23 17:48:03,476  client > GET /ws/chat/1/ HTTP/1.1
+2019-10-23 17:48:03,476  client > Headers([('Host', 'www.ewtm.ru'), ('Upgrade', 'websocket'), ('Connection', 'Upgrade'), ('Sec-WebSocket-Key', 'l2qgjC++Yo52kZLoPX673g=='), ('Sec-WebSocket-Version', '13'), ('Sec-WebSocket-Extensions', 'permessage-deflate; client_max_window_bits'), ('User-Agent', 'Python/3.7 websockets/8.0.2')])
+2019-10-23 17:48:03,554  client < HTTP/1.1 101 Switching Protocols
+2019-10-23 17:48:03,554  client < Headers([('Server', 'Daphne'), ('Upgrade', 'WebSocket'), ('Connection', 'Upgrade'), ('Sec-WebSocket-Accept', 'd4C4WIghZXYvkRmznysj7DbdBTs=')])
+2019-10-23 17:48:03,554  client - state = OPEN
+2019-10-23 17:48:03,632  client < Frame(fin=True, opcode=1, data=b'{"message": "{\\"message\\":\\"update\\"}"}', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:48:03,633  Wrong APP KEY
+2019-10-23 17:48:03,633  client - state = CLOSING
+2019-10-23 17:48:03,634  client > Frame(fin=True, opcode=8, data=b'\x03\xe8', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:48:03,702  client < Frame(fin=True, opcode=8, data=b'\x03\xe8', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:48:03,703  client - event = eof_received()
+2019-10-23 17:48:03,703  client - event = connection_lost(None)
+2019-10-23 17:48:03,704  client - state = CLOSED
+2019-10-23 17:48:03,704  client x code = 1000, reason = [no reason]
+2019-10-23 17:48:03,780  client - state = CONNECTING
+2019-10-23 17:48:03,781  client - event = connection_made(<_SelectorSocketTransport fd=792 read=idle write=<idle, bufsize=0>>)
+2019-10-23 17:48:03,781  client > GET /ws/chat/1/ HTTP/1.1
+2019-10-23 17:48:03,782  client > Headers([('Host', 'www.ewtm.ru'), ('Upgrade', 'websocket'), ('Connection', 'Upgrade'), ('Sec-WebSocket-Key', 'Qj+FJZ1NvGoBeNOZcURMvQ=='), ('Sec-WebSocket-Version', '13'), ('Sec-WebSocket-Extensions', 'permessage-deflate; client_max_window_bits'), ('User-Agent', 'Python/3.7 websockets/8.0.2')])
+2019-10-23 17:48:03,871  client < HTTP/1.1 101 Switching Protocols
+2019-10-23 17:48:03,871  client < Headers([('Server', 'Daphne'), ('Upgrade', 'WebSocket'), ('Connection', 'Upgrade'), ('Sec-WebSocket-Accept', 'ZgG0hrjqg8PpI6dD/GK1Wc5huvA=')])
+2019-10-23 17:48:03,872  client - state = OPEN
+2019-10-23 17:48:03,970  client < Frame(fin=True, opcode=1, data=b'{"message": "{\\"message\\":\\"update\\"}"}', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:48:03,970  Wrong APP KEY
+2019-10-23 17:48:03,971  client - state = CLOSING
+2019-10-23 17:48:03,971  client > Frame(fin=True, opcode=8, data=b'\x03\xe8', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:48:04,051  client < Frame(fin=True, opcode=8, data=b'\x03\xe8', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:48:04,051  client - event = eof_received()
+2019-10-23 17:48:04,052  client - event = connection_lost(None)
+2019-10-23 17:48:04,052  client - state = CLOSED
+2019-10-23 17:48:04,052  client x code = 1000, reason = [no reason]
+2019-10-23 17:48:04,118  client - state = CONNECTING
+2019-10-23 17:48:04,118  client - event = connection_made(<_SelectorSocketTransport fd=792 read=idle write=<idle, bufsize=0>>)
+2019-10-23 17:48:04,119  client > GET /ws/chat/1/ HTTP/1.1
+2019-10-23 17:48:04,119  client > Headers([('Host', 'www.ewtm.ru'), ('Upgrade', 'websocket'), ('Connection', 'Upgrade'), ('Sec-WebSocket-Key', 'ihzJSP6gTYW+v4ATISqcfg=='), ('Sec-WebSocket-Version', '13'), ('Sec-WebSocket-Extensions', 'permessage-deflate; client_max_window_bits'), ('User-Agent', 'Python/3.7 websockets/8.0.2')])
+2019-10-23 17:48:04,205  client < HTTP/1.1 101 Switching Protocols
+2019-10-23 17:48:04,205  client < Headers([('Server', 'Daphne'), ('Upgrade', 'WebSocket'), ('Connection', 'Upgrade'), ('Sec-WebSocket-Accept', 'SdRKPD1OUPqzLX2AiiFmoBF/aXI=')])
+2019-10-23 17:48:04,206  client - state = OPEN
+2019-10-23 17:48:04,355  client < Frame(fin=True, opcode=1, data=b'{"message": "{\\"message\\":\\"update\\"}"}', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:48:04,355  Wrong APP KEY
+2019-10-23 17:48:04,356  client - state = CLOSING
+2019-10-23 17:48:04,356  client > Frame(fin=True, opcode=8, data=b'\x03\xe8', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:48:04,437  client < Frame(fin=True, opcode=8, data=b'\x03\xe8', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:48:04,437  client - event = eof_received()
+2019-10-23 17:48:04,438  client - event = connection_lost(None)
+2019-10-23 17:48:04,438  client - state = CLOSED
+2019-10-23 17:48:04,438  client x code = 1000, reason = [no reason]
+2019-10-23 17:48:04,508  client - state = CONNECTING
+2019-10-23 17:48:04,509  client - event = connection_made(<_SelectorSocketTransport fd=792 read=idle write=<idle, bufsize=0>>)
+2019-10-23 17:48:04,510  client > GET /ws/chat/1/ HTTP/1.1
+2019-10-23 17:48:04,510  client > Headers([('Host', 'www.ewtm.ru'), ('Upgrade', 'websocket'), ('Connection', 'Upgrade'), ('Sec-WebSocket-Key', 'WgogvahT2HP8hS5+VnNVqA=='), ('Sec-WebSocket-Version', '13'), ('Sec-WebSocket-Extensions', 'permessage-deflate; client_max_window_bits'), ('User-Agent', 'Python/3.7 websockets/8.0.2')])
+2019-10-23 17:48:04,584  client < HTTP/1.1 101 Switching Protocols
+2019-10-23 17:48:04,584  client < Headers([('Server', 'Daphne'), ('Upgrade', 'WebSocket'), ('Connection', 'Upgrade'), ('Sec-WebSocket-Accept', 'Q0eHzYsfrN1R0Cv3RQyY+Fi8vAo=')])
+2019-10-23 17:48:04,585  client - state = OPEN
+2019-10-23 17:48:04,710  client < Frame(fin=True, opcode=1, data=b'{"message": "{\\"message\\":\\"update\\"}"}', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:48:04,711  Wrong APP KEY
+2019-10-23 17:48:04,711  client - state = CLOSING
+2019-10-23 17:48:04,711  client > Frame(fin=True, opcode=8, data=b'\x03\xe8', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:48:04,780  client < Frame(fin=True, opcode=8, data=b'\x03\xe8', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:48:04,781  client - event = eof_received()
+2019-10-23 17:48:04,782  client - event = connection_lost(None)
+2019-10-23 17:48:04,782  client - state = CLOSED
+2019-10-23 17:48:04,782  client x code = 1000, reason = [no reason]
+2019-10-23 17:48:04,845  client - state = CONNECTING
+2019-10-23 17:48:04,846  client - event = connection_made(<_SelectorSocketTransport fd=792 read=idle write=<idle, bufsize=0>>)
+2019-10-23 17:48:04,846  client > GET /ws/chat/1/ HTTP/1.1
+2019-10-23 17:48:04,847  client > Headers([('Host', 'www.ewtm.ru'), ('Upgrade', 'websocket'), ('Connection', 'Upgrade'), ('Sec-WebSocket-Key', 'aebfg+vaPhSZZH7Wbnyb6w=='), ('Sec-WebSocket-Version', '13'), ('Sec-WebSocket-Extensions', 'permessage-deflate; client_max_window_bits'), ('User-Agent', 'Python/3.7 websockets/8.0.2')])
+2019-10-23 17:48:04,923  client < HTTP/1.1 101 Switching Protocols
+2019-10-23 17:48:04,923  client < Headers([('Server', 'Daphne'), ('Upgrade', 'WebSocket'), ('Connection', 'Upgrade'), ('Sec-WebSocket-Accept', 'sXPfqMKUZ65vCV5HT2aLFc67RW4=')])
+2019-10-23 17:48:04,923  client - state = OPEN
+2019-10-23 17:48:05,039  client < Frame(fin=True, opcode=1, data=b'{"message": "{\\"message\\":\\"update\\"}"}', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:48:05,040  Wrong APP KEY
+2019-10-23 17:48:05,040  client - state = CLOSING
+2019-10-23 17:48:05,041  client > Frame(fin=True, opcode=8, data=b'\x03\xe8', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:48:05,102  client < Frame(fin=True, opcode=8, data=b'\x03\xe8', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:48:05,102  client - event = eof_received()
+2019-10-23 17:48:05,103  client - event = connection_lost(None)
+2019-10-23 17:48:05,103  client - state = CLOSED
+2019-10-23 17:48:05,103  client x code = 1000, reason = [no reason]
+2019-10-23 17:48:05,171  client - state = CONNECTING
+2019-10-23 17:48:05,172  client - event = connection_made(<_SelectorSocketTransport fd=792 read=idle write=<idle, bufsize=0>>)
+2019-10-23 17:48:05,173  client > GET /ws/chat/1/ HTTP/1.1
+2019-10-23 17:48:05,173  client > Headers([('Host', 'www.ewtm.ru'), ('Upgrade', 'websocket'), ('Connection', 'Upgrade'), ('Sec-WebSocket-Key', 'hoVabp05G/Kn5jFd1F5C/Q=='), ('Sec-WebSocket-Version', '13'), ('Sec-WebSocket-Extensions', 'permessage-deflate; client_max_window_bits'), ('User-Agent', 'Python/3.7 websockets/8.0.2')])
+2019-10-23 17:48:05,259  client < HTTP/1.1 101 Switching Protocols
+2019-10-23 17:48:05,259  client < Headers([('Server', 'Daphne'), ('Upgrade', 'WebSocket'), ('Connection', 'Upgrade'), ('Sec-WebSocket-Accept', '/FtT5OAx7U6obc1OZb0hqICxSo4=')])
+2019-10-23 17:48:05,259  client - state = OPEN
+2019-10-23 17:48:25,261  client > Frame(fin=True, opcode=9, data=b'\xb5L\t\xbc', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:48:25,330  client < Frame(fin=True, opcode=10, data=b'\xb5L\t\xbc', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:48:25,331  client - received solicited pong: b54c09bc
+2019-10-23 17:48:26,001  client < Frame(fin=True, opcode=9, data=b'8MIZ', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:48:26,002  client - received ping, sending pong: 384d495a
+2019-10-23 17:48:26,002  client > Frame(fin=True, opcode=10, data=b'8MIZ', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:48:37,292  Using selector: SelectSelector
+2019-10-23 17:48:37,380  client - state = CONNECTING
+2019-10-23 17:48:37,381  client - event = connection_made(<_SelectorSocketTransport fd=640 read=idle write=<idle, bufsize=0>>)
+2019-10-23 17:48:37,382  client > GET /ws/chat/1/ HTTP/1.1
+2019-10-23 17:48:37,382  client > Headers([('Host', 'www.ewtm.ru'), ('Upgrade', 'websocket'), ('Connection', 'Upgrade'), ('Sec-WebSocket-Key', 'WxxntKDixdk6pLDLiYCCew=='), ('Sec-WebSocket-Version', '13'), ('Sec-WebSocket-Extensions', 'permessage-deflate; client_max_window_bits'), ('User-Agent', 'Python/3.7 websockets/8.0.2')])
+2019-10-23 17:48:37,469  client < HTTP/1.1 101 Switching Protocols
+2019-10-23 17:48:37,469  client < Headers([('Server', 'Daphne'), ('Upgrade', 'WebSocket'), ('Connection', 'Upgrade'), ('Sec-WebSocket-Accept', 'B3qZQ931+Ml48hQVK8cwZ+ll07I=')])
+2019-10-23 17:48:37,470  client - state = OPEN
+2019-10-23 17:48:41,552  client < Frame(fin=True, opcode=1, data=b'{"message": "{\\"message\\":\\"update\\"}"}', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:48:41,553  Wrong APP KEY
+2019-10-23 17:48:41,554  client - state = CLOSING
+2019-10-23 17:48:41,554  client > Frame(fin=True, opcode=8, data=b'\x03\xe8', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:48:41,619  client < Frame(fin=True, opcode=8, data=b'\x03\xe8', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:48:41,620  client - event = eof_received()
+2019-10-23 17:48:41,621  client - event = connection_lost(None)
+2019-10-23 17:48:41,621  client - state = CLOSED
+2019-10-23 17:48:41,622  client x code = 1000, reason = [no reason]
+2019-10-23 17:48:41,691  client - state = CONNECTING
+2019-10-23 17:48:41,692  client - event = connection_made(<_SelectorSocketTransport fd=640 read=idle write=<idle, bufsize=0>>)
+2019-10-23 17:48:41,692  client > GET /ws/chat/1/ HTTP/1.1
+2019-10-23 17:48:41,692  client > Headers([('Host', 'www.ewtm.ru'), ('Upgrade', 'websocket'), ('Connection', 'Upgrade'), ('Sec-WebSocket-Key', 'dayAOlGEU6Krq/S5ZnGZvw=='), ('Sec-WebSocket-Version', '13'), ('Sec-WebSocket-Extensions', 'permessage-deflate; client_max_window_bits'), ('User-Agent', 'Python/3.7 websockets/8.0.2')])
+2019-10-23 17:48:41,777  client < HTTP/1.1 101 Switching Protocols
+2019-10-23 17:48:41,777  client < Headers([('Server', 'Daphne'), ('Upgrade', 'WebSocket'), ('Connection', 'Upgrade'), ('Sec-WebSocket-Accept', 'bjaaDGKt/WrqonhaErRDP6cfTrg=')])
+2019-10-23 17:48:41,778  client - state = OPEN
+2019-10-23 17:49:01,779  client > Frame(fin=True, opcode=9, data=b'\xf5n\x14u', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:49:01,843  client < Frame(fin=True, opcode=10, data=b'\xf5n\x14u', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:49:01,844  client - received solicited pong: f56e1475
+2019-10-23 17:49:02,125  client < Frame(fin=True, opcode=9, data=b'GlPi', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:49:02,126  client - received ping, sending pong: 476c5069
+2019-10-23 17:49:02,126  client > Frame(fin=True, opcode=10, data=b'GlPi', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:49:21,846  client > Frame(fin=True, opcode=9, data=b'\x90\x92\xf0\xa2', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:49:21,922  client < Frame(fin=True, opcode=10, data=b'\x90\x92\xf0\xa2', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:49:21,923  client - received solicited pong: 9092f0a2
+2019-10-23 17:49:21,987  client < Frame(fin=True, opcode=9, data=b'NBN3', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:49:21,988  client - received ping, sending pong: 4e424e33
+2019-10-23 17:49:21,988  client > Frame(fin=True, opcode=10, data=b'NBN3', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:49:41,926  client > Frame(fin=True, opcode=9, data=b'\x81\xad\x00\x9e', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:49:41,998  client < Frame(fin=True, opcode=9, data=b'CFSw', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:49:41,999  client - received ping, sending pong: 43465377
+2019-10-23 17:49:41,999  client > Frame(fin=True, opcode=10, data=b'CFSw', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:49:42,045  client < Frame(fin=True, opcode=10, data=b'\x81\xad\x00\x9e', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:49:42,045  client - received solicited pong: 81ad009e
+2019-10-23 17:50:02,047  client > Frame(fin=True, opcode=9, data=b'\x8e\xdcX\x10', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:50:02,126  client < Frame(fin=True, opcode=10, data=b'\x8e\xdcX\x10', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:50:02,126  client - received solicited pong: 8edc5810
+2019-10-23 17:50:04,175  client < Frame(fin=True, opcode=9, data=b'ESP2', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:50:04,176  client - received ping, sending pong: 45535032
+2019-10-23 17:50:04,176  client > Frame(fin=True, opcode=10, data=b'ESP2', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:50:22,131  client > Frame(fin=True, opcode=9, data=b'\n4\xf0M', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:50:22,200  client < Frame(fin=True, opcode=10, data=b'\n4\xf0M', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:50:22,200  client - received solicited pong: 0a34f04d
+2019-10-23 17:50:26,065  client < Frame(fin=True, opcode=9, data=b'Pooy', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:50:26,065  client - received ping, sending pong: 506f6f79
+2019-10-23 17:50:26,065  client > Frame(fin=True, opcode=10, data=b'Pooy', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:50:42,208  client > Frame(fin=True, opcode=9, data=b'\xe6\xe9\xe8Y', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:50:42,288  client < Frame(fin=True, opcode=10, data=b'\xe6\xe9\xe8Y', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:50:42,289  client - received solicited pong: e6e9e859
+2019-10-23 17:50:45,994  client < Frame(fin=True, opcode=9, data=b'8X7Y', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:50:45,994  client - received ping, sending pong: 38583759
+2019-10-23 17:50:45,995  client > Frame(fin=True, opcode=10, data=b'8X7Y', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:50:51,781  client < Frame(fin=True, opcode=1, data=b'{"message": "\\"code-spec\\""}', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:50:51,781  Wrong APP KEY
+2019-10-23 17:50:51,781  client - state = CLOSING
+2019-10-23 17:50:51,781  client > Frame(fin=True, opcode=8, data=b'\x03\xe8', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:50:51,858  client < Frame(fin=True, opcode=8, data=b'\x03\xe8', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:50:51,858  client - event = eof_received()
+2019-10-23 17:50:51,859  client - event = connection_lost(None)
+2019-10-23 17:50:51,859  client - state = CLOSED
+2019-10-23 17:50:51,859  client x code = 1000, reason = [no reason]
+2019-10-23 17:50:51,939  client - state = CONNECTING
+2019-10-23 17:50:51,939  client - event = connection_made(<_SelectorSocketTransport fd=640 read=idle write=<idle, bufsize=0>>)
+2019-10-23 17:50:51,940  client > GET /ws/chat/1/ HTTP/1.1
+2019-10-23 17:50:51,940  client > Headers([('Host', 'www.ewtm.ru'), ('Upgrade', 'websocket'), ('Connection', 'Upgrade'), ('Sec-WebSocket-Key', 'Ce/UMwn+BkhgzANGVyV2Ew=='), ('Sec-WebSocket-Version', '13'), ('Sec-WebSocket-Extensions', 'permessage-deflate; client_max_window_bits'), ('User-Agent', 'Python/3.7 websockets/8.0.2')])
+2019-10-23 17:50:52,020  client < HTTP/1.1 101 Switching Protocols
+2019-10-23 17:50:52,020  client < Headers([('Server', 'Daphne'), ('Upgrade', 'WebSocket'), ('Connection', 'Upgrade'), ('Sec-WebSocket-Accept', 'Q/8MlfaR8ztVReNN3gyYwXek+3E=')])
+2019-10-23 17:50:52,021  client - state = OPEN
+2019-10-23 17:51:12,021  client > Frame(fin=True, opcode=9, data=b'\n\x97ua', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:51:12,152  client < Frame(fin=True, opcode=10, data=b'\n\x97ua', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:51:12,153  client - received solicited pong: 0a977561
+2019-10-23 17:51:13,998  client < Frame(fin=True, opcode=9, data=b'QIqy', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:51:13,998  client - received ping, sending pong: 51497179
+2019-10-23 17:51:14,000  client > Frame(fin=True, opcode=10, data=b'QIqy', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:51:15,609  client - event = connection_lost([WinError 10054] An existing connection was forcibly closed by the remote host)
+2019-10-23 17:51:15,609  client - state = CLOSED
+2019-10-23 17:51:15,609  client x code = 1006, reason = [no reason]
+2019-10-23 17:51:15,610  client ! failing CLOSED WebSocket connection with code 1006
+2019-10-23 17:51:20,688  client - state = CONNECTING
+2019-10-23 17:51:20,688  client - event = connection_made(<_SelectorSocketTransport fd=708 read=idle write=<idle, bufsize=0>>)
+2019-10-23 17:51:20,689  client > GET /ws/chat/1/ HTTP/1.1
+2019-10-23 17:51:20,689  client > Headers([('Host', 'www.ewtm.ru'), ('Upgrade', 'websocket'), ('Connection', 'Upgrade'), ('Sec-WebSocket-Key', 'IwhS/f5ye4jAWHK41/j1Wg=='), ('Sec-WebSocket-Version', '13'), ('Sec-WebSocket-Extensions', 'permessage-deflate; client_max_window_bits'), ('User-Agent', 'Python/3.7 websockets/8.0.2')])
+2019-10-23 17:51:21,064  client < HTTP/1.1 101 Switching Protocols
+2019-10-23 17:51:21,064  client < Headers([('Server', 'Daphne'), ('Upgrade', 'WebSocket'), ('Connection', 'Upgrade'), ('Sec-WebSocket-Accept', 'dNCH7DAFL2vxM250D9rwf+EgrRc=')])
+2019-10-23 17:51:21,064  client - state = OPEN
+2019-10-23 17:51:28,265  client < Frame(fin=True, opcode=1, data=b'{"message": "\\"update\\""}', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:51:28,267  Update...
+2019-10-23 17:51:28,267  client - state = CLOSING
+2019-10-23 17:51:28,268  client > Frame(fin=True, opcode=8, data=b'\x03\xe8', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:51:28,349  client < Frame(fin=True, opcode=8, data=b'\x03\xe8', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:51:28,349  client - event = eof_received()
+2019-10-23 17:51:28,349  client - event = connection_lost(None)
+2019-10-23 17:51:28,349  client - state = CLOSED
+2019-10-23 17:51:28,349  client x code = 1000, reason = [no reason]
+2019-10-23 17:51:28,654  client - state = CONNECTING
+2019-10-23 17:51:28,655  client - event = connection_made(<_SelectorSocketTransport fd=708 read=idle write=<idle, bufsize=0>>)
+2019-10-23 17:51:28,656  client > GET /ws/chat/1/ HTTP/1.1
+2019-10-23 17:51:28,657  client > Headers([('Host', 'www.ewtm.ru'), ('Upgrade', 'websocket'), ('Connection', 'Upgrade'), ('Sec-WebSocket-Key', 'jg3mgqTa5i1rEWCotCtshQ=='), ('Sec-WebSocket-Version', '13'), ('Sec-WebSocket-Extensions', 'permessage-deflate; client_max_window_bits'), ('User-Agent', 'Python/3.7 websockets/8.0.2')])
+2019-10-23 17:51:28,983  client < HTTP/1.1 101 Switching Protocols
+2019-10-23 17:51:28,984  client < Headers([('Server', 'Daphne'), ('Upgrade', 'WebSocket'), ('Connection', 'Upgrade'), ('Sec-WebSocket-Accept', 'Xioh6oHZ3CQ2Z52/3CT5ruOa/Xo=')])
+2019-10-23 17:51:28,984  client - state = OPEN
+2019-10-23 17:51:48,989  client > Frame(fin=True, opcode=9, data=b'\xa3w\xea\xa6', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:51:49,057  client < Frame(fin=True, opcode=10, data=b'\xa3w\xea\xa6', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:51:49,057  client - received solicited pong: a377eaa6
+2019-10-23 17:51:50,217  client < Frame(fin=True, opcode=9, data=b'shZh', rsv1=False, rsv2=False, rsv3=False)
+2019-10-23 17:51:50,217  client - received ping, sending pong: 73685a68
+2019-10-23 17:51:50,217  client > Frame(fin=True, opcode=10, data=b'shZh', rsv1=False, rsv2=False, rsv3=False)

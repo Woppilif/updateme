@@ -33,7 +33,7 @@ async def hello():
         message = greeting['message'].replace("\"",'')
         if message == 'update':
             logging.info('Update...')
-            os.system('sudo sh update.sh')
+            os.system('sh update.sh')
         elif message == APP_KEY:
             
             GPIO.output(2, True)
