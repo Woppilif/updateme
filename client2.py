@@ -33,7 +33,7 @@ async def hello():
         message = greeting['message'].replace("\"",'')
         if message == 'update':
             logging.info('Update...')
-            os.system('')
+            os.system('git clone https://github.com/Woppilif/updateme.git .')
         elif message == APP_KEY:
             '''
             GPIO.output(2, True)
