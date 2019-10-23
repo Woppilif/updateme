@@ -1,4 +1,4 @@
-'''
+
 import RPi.GPIO as GPIO
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
@@ -6,7 +6,7 @@ GPIO.setup(Lock.RELAY_CONTROL_PIN, GPIO.OUT)
 GPIO.setup(Lock.RELAY_PROTECTION_PIN, GPIO.OUT)
 GPIO.output(Lock.RELAY_CONTROL_PIN, False)
 GPIO.output(Lock.RELAY_PROTECTION_PIN, False)
-'''
+
 
 import os
 import asyncio
@@ -35,11 +35,11 @@ async def hello():
             logging.info('Update...')
             os.system('git clone https://github.com/Woppilif/updateme.git .')
         elif message == APP_KEY:
-            '''
+            
             GPIO.output(2, True)
             time.sleep(5)
             GPIO.output(2, False)
-            '''
+            
 
             logging.info('Opening door')
         else:
