@@ -1,12 +1,29 @@
+from lock import Lock
+import asyncio
 
 import RPi.GPIO as GPIO
+# lock = Lock()
+# asyncio.run(lock.open())
+
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 GPIO.setup(Lock.RELAY_CONTROL_PIN, GPIO.OUT)
 GPIO.setup(Lock.RELAY_PROTECTION_PIN, GPIO.OUT)
 GPIO.output(Lock.RELAY_CONTROL_PIN, False)
 GPIO.output(Lock.RELAY_PROTECTION_PIN, False)
+from lock import Lock
+import asyncio
 
+import RPi.GPIO as GPIO
+# lock = Lock()
+# asyncio.run(lock.open())
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False)
+GPIO.setup(Lock.RELAY_CONTROL_PIN, GPIO.OUT)
+GPIO.setup(Lock.RELAY_PROTECTION_PIN, GPIO.OUT)
+GPIO.output(Lock.RELAY_CONTROL_PIN, False)
+GPIO.output(Lock.RELAY_PROTECTION_PIN, False)
 
 import os
 import asyncio
