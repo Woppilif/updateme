@@ -5,4 +5,4 @@ sudo chmod 777 client.py
 sudo cp updateme/update.sh ./
 sudo chmod 777 update.sh
 sudo reboot
-#okay
+#okay there is
