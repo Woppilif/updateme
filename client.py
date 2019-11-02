@@ -1,30 +1,6 @@
-from lock import Lock
-import asyncio
-#HELLO
-import RPi.GPIO as GPIO
-# lock = Lock()
-# asyncio.run(lock.open())
-
-GPIO.setmode(GPIO.BCM)
-GPIO.setwarnings(False)
-GPIO.setup(Lock.RELAY_CONTROL_PIN, GPIO.OUT)
-GPIO.setup(Lock.RELAY_PROTECTION_PIN, GPIO.OUT)
-GPIO.output(Lock.RELAY_CONTROL_PIN, False)
-GPIO.output(Lock.RELAY_PROTECTION_PIN, False)
-from lock import Lock
-import asyncio
+#upd 1
 
 import RPi.GPIO as GPIO
-# lock = Lock()
-# asyncio.run(lock.open())
-
-GPIO.setmode(GPIO.BCM)
-GPIO.setwarnings(False)
-GPIO.setup(Lock.RELAY_CONTROL_PIN, GPIO.OUT)
-GPIO.setup(Lock.RELAY_PROTECTION_PIN, GPIO.OUT)
-GPIO.output(Lock.RELAY_CONTROL_PIN, False)
-GPIO.output(Lock.RELAY_PROTECTION_PIN, False)
-
 import os
 import asyncio
 import websockets
@@ -33,6 +9,12 @@ import time
 import json
 import logging
 import configparser
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False)
+GPIO.setup(2, GPIO.OUT)
+GPIO.output(2, False)
+
 config = configparser.ConfigParser()
 config.read("conf.config")
 
@@ -52,12 +34,9 @@ async def hello():
             logging.info('Update...')
             os.system('sh update.sh')
         elif message == APP_KEY:
-            
             GPIO.output(2, True)
             time.sleep(5)
             GPIO.output(2, False)
-            
-
             logging.info('Opening door')
         else:
             logging.warning('Wrong APP KEY')
@@ -77,5 +56,10 @@ async def Run():
         except ConnectionRefusedError:
             print("ConnectionRefusedError! Trying to connect to server.....!")
             time.sleep(5)
-        
-asyncio.get_event_loop().run_until_complete(Run())
+
+while True:
+    try:
+        asyncio.get_event_loop().run_until_complete(Run())
+    except:
+        pass
+
