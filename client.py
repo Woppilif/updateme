@@ -59,4 +59,8 @@ async def Run():
             print("ConnectionRefusedError! Trying to connect to server.....!")
             time.sleep(5)
         
-asyncio.get_event_loop().run_until_complete(Run())
+while True:
+    try:
+        asyncio.get_event_loop().run_until_complete(Run())
+    except:
+        pass
