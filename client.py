@@ -74,7 +74,13 @@ class Flat():
 
     def update(self):
         logging.info('Update...')
-        os.system('sh update.sh')
+        os.system('sudo rm -r updateme')
+        os.system('git clone https://github.com/Woppilif/updateme.git')
+        os.system('sudo cp updateme/client.py ./')
+        os.system('sudo chmod 777 client.py')
+        os.system('sudo cp updateme/update.sh ./')
+        os.system('sudo chmod 777 update.sh')
+        os.system('sudo reboot')
 
     def openDoor(self):
         if GP_APP:
