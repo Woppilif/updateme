@@ -35,6 +35,7 @@ class Flat():
                 await self.sendMessage('openDoor')
             elif self.message['message'].replace("\"",'') == 'update':
                 self.update()
+                await self.sendMessage('updating software....')
             else:
                 pass
         else:
