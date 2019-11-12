@@ -18,10 +18,10 @@ try:
 
     GPIO.setup(4, GPIO.IN,pull_up_down=GPIO.PUD_DOWN)
     GPIO.setup(5, GPIO.IN,pull_up_down=GPIO.PUD_UP)
-
+    '''
     GPIO.add_event_detect(4,GPIO.BOTH)
     GPIO.add_event_detect(5,GPIO.BOTH)
-    
+    '''
     GP_APP = True
 except:
     GP_APP = False
@@ -92,7 +92,7 @@ class Flat():
         os.system('sudo chmod 777 update.sh')
         os.system('sudo reboot')
 
-    async def openDoor(self):
+    def openDoor(self):
         if GP_APP:
             GPIO.output(2, True)
             time.sleep(5)
@@ -101,20 +101,24 @@ class Flat():
         logging.info('Door opened...')
         print("opened!")
 
-    async def boxOpened(self):
+    '''
+    def boxOpened(self,channel):
         print("OPENED BOX!")
-        await self.sendMessage('OPENED BOX')
+        self.websocket.send('OPENED BOX')
 
-    async def doorOpened(self):
+    def doorOpened(self,channel):
         print("OPENED DOOR!")
-        await self.sendMessage('OPENED DOOR')
+        self.websocket.send('OPENED DOOR')
+    '''
 
 while True:
     try:
         flat = Flat()
-        asyncio.get_event_loop().run_until_complete(flat.Run())
+        '''
         if GP_APP:
-            GPIO.add_event_callback(4,flat.boxOpened())
-            GPIO.add_event_callback(5,flat.doorOpened())
+            GPIO.add_event_callback(4,flat.boxOpened)
+            GPIO.add_event_callback(5,flat.doorOpened)
+        '''
+        asyncio.get_event_loop().run_until_complete(flat.Run())
     except:
         pass
