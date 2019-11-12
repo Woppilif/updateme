@@ -92,7 +92,7 @@ class Flat():
         os.system('sudo chmod 777 update.sh')
         os.system('sudo reboot')
 
-    def openDoor(self):
+    async def openDoor(self):
         if GP_APP:
             GPIO.output(2, True)
             time.sleep(5)
@@ -101,11 +101,11 @@ class Flat():
         logging.info('Door opened...')
         print("opened!")
 
-    def boxOpened(self):
+    async def boxOpened(self):
         print("OPENED BOX!")
         await self.sendMessage('OPENED BOX')
 
-    def doorOpened(self):
+    async def doorOpened(self):
         print("OPENED DOOR!")
         await self.sendMessage('OPENED DOOR')
 
