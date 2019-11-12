@@ -12,6 +12,16 @@ try:
     GPIO.setwarnings(False)
     GPIO.setup(2, GPIO.OUT)
     GPIO.output(2, False)
+
+    GPIO.setup(3, GPIO.OUT)
+    GPIO.output(3, False)
+
+    GPIO.setup(4, GPIO.IN,pull_up_down=GPIO.PUD_DOWN)
+    GPIO.setup(5, GPIO.IN,pull_up_down=GPIO.PUD_UP)
+
+    GPIO.add_event_detect(4,GPIO.BOTH)
+    GPIO.add_event_detect(5,GPIO.BOTH)
+    
     GP_APP = True
 except:
     GP_APP = False
@@ -91,14 +101,20 @@ class Flat():
         logging.info('Door opened...')
         print("opened!")
 
-    def doorOpened(self):
-        pass
+    def boxOpened(self):
+        print("OPENED BOX!")
+        await self.sendMessage('OPENED BOX')
 
-    def doorClosed(self):
-        pass
+    def doorOpened(self):
+        print("OPENED DOOR!")
+        await self.sendMessage('OPENED DOOR')
 
 while True:
     try:
-        asyncio.get_event_loop().run_until_complete(Flat().Run())
+        flat = Flat()
+        asyncio.get_event_loop().run_until_complete(flat.Run())
+        if GP_APP:
+            GPIO.add_event_callback(4,flat.boxOpened())
+            GPIO.add_event_callback(5,flat.doorOpened())
     except:
         pass
