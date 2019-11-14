@@ -1,8 +1,8 @@
-import asyncio
 import websockets
 from websockets.exceptions import InvalidStatusCode, ConnectionClosedError
-import os
 import configparser
+import os
+import asyncio
 import time
 import json
 import logging
@@ -25,8 +25,8 @@ try:
     GP_APP = True
 except:
     GP_APP = False
-
 FORMAT = '%(asctime)-15s  %(message)s'
+
 class Flat():
     def __init__(self):
         config = configparser.ConfigParser()
@@ -34,34 +34,9 @@ class Flat():
         self.cleint_id = config['DEFAULT']['chat_id']
         self.app_key = config['DEFAULT']['app']
         self.message = None
-        self.ws_object = websockets.connect("ws://127.0.0.1:8000/ws/chat/{0}/".format(self.cleint_id))
+        self.ws_object = websockets.connect("ws://www.ewtm.ru/ws/chat/{0}/".format(self.cleint_id))
         logging.basicConfig(filename="flat-{0}.log".format(self.cleint_id),level=logging.DEBUG,format=FORMAT)
     
-    def update(self):
-        logging.info('Update...')
-        os.system('sudo rm -r updateme')
-        os.system('git clone https://github.com/Woppilif/updateme.git')
-        os.system('sudo cp updateme/client.py ./')
-        os.system('sudo chmod 777 client.py')
-        os.system('sudo cp updateme/update.sh ./')
-        os.system('sudo chmod 777 update.sh')
-        os.system('sudo reboot')
-        
-
-    def openDoor(self):
-        if GP_APP:
-            GPIO.output(2, True)
-            time.sleep(5)
-            GPIO.output(2, False)
-        
-        logging.info('Door opened...')
-        print("opened!")
-
-    async def sendMessage(self,message):
-        async with self.ws_object as websocket:
-            print("Message has been sent!")
-            await websocket.send(message)
-
     async def readMessage(self):
         self.message = json.loads(self.message)
         if self.message['appid'].replace("\"",'') == self.app_key:
@@ -76,26 +51,18 @@ class Flat():
         else:
             logging.warning('Wrong APP KEY')
         self.message = None
+        
 
     async def getMessage(self):
         async with self.ws_object as websocket:
-            await asyncio.sleep(0)
-            print("Listening...")
-            while True:
-                self.message = await websocket.recv()
-                await self.readMessage()
+            print("Listening....")
+            self.message  = await websocket.recv()
 
-    async def answer(self):
-        print("File destructor is here")
-        while True:
-            try:
-                f = open("hello","r")
-                print('sending message')
-                os.remove("hello")
-                await self.sendMessage("smth happened")
-                await asyncio.sleep(0)
-            except:
-                await asyncio.sleep(0)
+    async def sendMessage(self,message):
+        async with self.ws_object as websocket:
+            print("Message has been sent!")
+            await websocket.send(message)
+
 
     async def Run(self):
         while True:
@@ -103,19 +70,55 @@ class Flat():
                 await self.getMessage()
             except ConnectionClosedError:
                 print("Disconnected! Trying to reconnect!")
-                await asyncio.sleep(5)
+                time.sleep(5)
             except InvalidStatusCode:
                 print("InvalidStatusCode! Trying to connect to server.....!")
-                await asyncio.sleep(5)
+                time.sleep(5)
             except ConnectionRefusedError:
                 print("ConnectionRefusedError! Trying to connect to server.....!")
-                await asyncio.sleep(5)
+                time.sleep(5)
+            finally:
+                 if self.message is not None:
+                    await self.readMessage()
+                    
+
+    def update(self):
+        logging.info('Update...')
+        os.system('sudo rm -r updateme')
+        os.system('git clone https://github.com/Woppilif/updateme.git')
+        os.system('sudo cp updateme/client.py ./')
+        os.system('sudo chmod 777 client.py')
+        os.system('sudo cp updateme/update.sh ./')
+        os.system('sudo chmod 777 update.sh')
+        os.system('sudo reboot')
+
+    def openDoor(self):
+        if GP_APP:
+            GPIO.output(2, True)
+            time.sleep(5)
+            GPIO.output(2, False)
+        
+        logging.info('Door opened...')
+        print("opened!")
+
+    '''
+    def boxOpened(self,channel):
+        print("OPENED BOX!")
+        self.websocket.send('OPENED BOX')
+
+    def doorOpened(self,channel):
+        print("OPENED DOOR!")
+        self.websocket.send('OPENED DOOR')
+    '''
 
 while True:
-    flat = Flat()
-    loop = asyncio.get_event_loop()
-    tasks = []
-    tasks.append(loop.create_task(flat.Run()))
-    tasks.append(loop.create_task(flat.answer()))
-    x = asyncio.gather(*tasks)
-    loop.run_until_complete(x)
+    try:
+        flat = Flat()
+        '''
+        if GP_APP:
+            GPIO.add_event_callback(4,flat.boxOpened)
+            GPIO.add_event_callback(5,flat.doorOpened)
+        '''
+        asyncio.get_event_loop().run_until_complete(flat.Run())
+    except:
+        pass
