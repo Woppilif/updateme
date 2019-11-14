@@ -34,7 +34,7 @@ class Flat():
         self.cleint_id = config['DEFAULT']['chat_id']
         self.app_key = config['DEFAULT']['app']
         self.message = None
-        self.ws_object = websockets.connect("ws://127.0.0.1:8000/ws/chat/{0}/".format(self.cleint_id))
+        self.ws_object = websockets.connect("ws://ewtm.ru/ws/chat/{0}/".format(self.cleint_id))
         logging.basicConfig(filename="flat-{0}.log".format(self.cleint_id),level=logging.DEBUG,format=FORMAT)
     
     def update(self):
