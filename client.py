@@ -98,7 +98,7 @@ class Flat():
                     print("box opened")
                     await asyncio.sleep(10)
                     await self.sendMessage("box opened")
-                elif int(GPIO.input(5)) == 1:
+                if int(GPIO.input(5)) == 1:
                     print("door opened")
                     await asyncio.sleep(5)
                     await self.sendMessage("door opened")
