@@ -38,7 +38,7 @@ class WebSocketClient():
         if self.connection.open:
             print('Connection stablished. Client correcly connected')
             # Send greeting
-            await self.sendMessage('Hey server, this is flat {0} v 1.0'.format(self.cleint_id))
+            await self.sendMessage('Hey server, this is FLAT ID: {0} / FW v 1.0'.format(self.cleint_id))
             return self.connection
 
 
@@ -61,8 +61,9 @@ class WebSocketClient():
                     elif message['message'].replace("\"",'') == 'update':
                         await self.update()
                     elif message['message'].replace("\"",'') == 'sendlog':
-                        #await self.sendLog()
                         await self.sendMessage('LOG HAS BEEN SENT!')
+                    elif message['message'].replace("\"",'') == 'ping':
+                        await self.sendMessage('PONG FLAT ID: {0}'.format(self.cleint_id))
                     else:
                         pass
                 else:
