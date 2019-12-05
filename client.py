@@ -85,11 +85,11 @@ class WebSocketClient():
             if GP_APP:
                 if int(GPIO.input(4)) == 0:
                     print("box opened")
-                    await self.sendMessage("box opened")
+                    await self.sendMessage("box opened FLAT ID: {0}".format(self.cleint_id))
                     await asyncio.sleep(5)
                 if int(GPIO.input(5)) == 1:
                     print("door opened")
-                    await self.sendMessage("door opened")
+                    await self.sendMessage("door opened FLAT ID: {0}".format(self.cleint_id))
                     await asyncio.sleep(5)
             
             
@@ -107,11 +107,11 @@ class WebSocketClient():
             time.sleep(5)
             GPIO.output(2, False)
         logging.warning('Door opened...')
-        await self.sendMessage('openDoor')
+        await self.sendMessage('openDoor FLAT ID: {0}'.format(self.cleint_id))
 
     async def update(self):
         logging.warning('Update...')
-        await self.sendMessage('updating software....')
+        await self.sendMessage('updating software.... FLAT ID: {0}'.format(self.cleint_id))
         if GP_APP:
             os.system('sudo rm -r updateme')
             os.system('git clone https://github.com/Woppilif/updateme.git')
