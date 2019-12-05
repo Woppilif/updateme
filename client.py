@@ -39,7 +39,7 @@ class WebSocketClient():
         if self.connection.open:
             print('Connection stablished. Client correcly connected')
             # Send greeting
-            await self.sendMessage('Hey server, this is FLAT ID: {0} / FW v 1.0'.format(self.cleint_id))
+            await self.sendMessage('Hey server, this is FLAT ID: {0} / FW v 1.1'.format(self.cleint_id))
             return self.connection
 
 
