@@ -14,7 +14,7 @@ try:
     GPIO.setup(3, GPIO.OUT)
     GPIO.output(3, False)
     GPIO.setup(4, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-    GPIO.setup(5, GPIO.IN ,pull_up_down=GPIO.PUD_DOWN)
+    GPIO.setup(5, GPIO.IN ,pull_up_down=GPIO.PUD_UP)
     GP_APP = True
 except:
     GP_APP = False
@@ -81,17 +81,17 @@ class WebSocketClient():
         Ping - pong messages to verify connection is alive
         '''
         while True:
-            '''
+            
             if GP_APP:
                 if int(GPIO.input(4)) == 1:
                     print("box opened")
                     await self.sendMessage("box opened")
                     await asyncio.sleep(5)
-                if int(GPIO.input(5)) == 1:
+                if int(GPIO.input(5)) == 0:
                     print("door opened")
                     await self.sendMessage("door opened")
                     await asyncio.sleep(5)
-            '''
+            
             
             try:
                 await connection.ping()
