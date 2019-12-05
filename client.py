@@ -83,14 +83,17 @@ class WebSocketClient():
         while True:
             
             if GP_APP:
+                '''
                 if int(GPIO.input(4)) == 0:
                     print("box opened")
                     await self.sendMessage("box opened FLAT ID: {0}".format(self.cleint_id))
                     await asyncio.sleep(5)
+                '''
                 if int(GPIO.input(5)) == 1:
                     print("door opened")
                     await self.sendMessage("door opened FLAT ID: {0}".format(self.cleint_id))
                     await asyncio.sleep(5)
+                
             
             
             try:
