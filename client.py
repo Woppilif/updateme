@@ -35,7 +35,7 @@ class WebSocketClient():
 
             websockets.client.connect returns a WebSocketClientProtocol, which is used to send and receive messages
         '''
-        self.connection = await websockets.client.connect("ws://ewtm.ru/ws/chat/{0}/".format(self.cleint_id))
+        self.connection = await websockets.client.connect("wss://ewtm.ru/ws/chat/{0}/".format(self.cleint_id))
         if self.connection.open:
             print('Connection stablished. Client correcly connected')
             # Send greeting
