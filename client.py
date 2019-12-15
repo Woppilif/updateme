@@ -37,7 +37,7 @@ class WebSocketClient():
         '''
         self.connection = await websockets.client.connect("wss://ewtm.ru/ws/chat/{0}/".format(self.cleint_id))
         if self.connection.open:
-            print('Connection stablished. Client correcly connected')
+            logging.warning('Connection stablished. Client correcly connecte') 
             # Send greeting
             await self.sendMessage('Hey server, this is FLAT ID: {0} / FW v 1.1'.format(self.cleint_id))
             return self.connection
@@ -70,11 +70,10 @@ class WebSocketClient():
                     else:
                         pass
                 else:
-                    print("Wrong APP KEY")
                     logging.error('Wrong APP KEY')
                 print('Received message from server: ' + str(message))
             except websockets.exceptions.ConnectionClosed:
-                print('Connection with server closed')
+                logging.warning('Connection with server closed') 
                 break
 
     async def heartbeat(self, connection):
@@ -87,12 +86,12 @@ class WebSocketClient():
             if GP_APP:
                 '''
                 if int(GPIO.input(4)) == 0:
-                    print("box opened")
+                    logging.warning('box opened phys') 
                     await self.sendMessage("box opened FLAT ID: {0}".format(self.cleint_id))
                     await asyncio.sleep(5)
                 '''
                 if int(GPIO.input(5)) == 1:
-                    print("door opened")
+                    logging.warning('door opened phys') 
                     await self.sendMessage("door opened FLAT ID: {0}".format(self.cleint_id))
                     await asyncio.sleep(5)
                 
@@ -103,7 +102,7 @@ class WebSocketClient():
                 print("it was ping")
                 await asyncio.sleep(5)
             except websockets.exceptions.ConnectionClosed:
-                print('Connection with server closed')
+                logging.warning('Connection with server closed') 
                 break
 
     async def openDoor(self):
@@ -111,7 +110,7 @@ class WebSocketClient():
             GPIO.output(2, True)
             time.sleep(5)
             GPIO.output(2, False)
-        logging.warning('Door opened...') 
+        logging.warning('Door opened via COMMAND') 
         await self.sendMessage('[COMMAND] open door | FLAT ID: {0}'.format(self.cleint_id))
 
     async def deleteLog(self):
@@ -120,6 +119,7 @@ class WebSocketClient():
             status = True
         except:
             status = False  
+        logging.warning('log has been deleted') 
         await self.sendMessage('DELETE LOG FLAT ID: {0}, Response: {1}'.format(self.cleint_id,status))
 
     async def sendLog(self):
@@ -130,6 +130,7 @@ class WebSocketClient():
             status = True
         except:
             status = None  
+        logging.warning('log has been sent') 
         await self.sendMessage('GET LOG FLAT ID: {0}, Response: {1}'.format(self.cleint_id,status))
 
     async def update(self):
