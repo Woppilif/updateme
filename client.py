@@ -63,6 +63,8 @@ class WebSocketClient():
                         await self.update()
                     elif message['message'].replace("\"",'') == 'sendlog':
                         await self.sendLog()
+                    elif message['message'].replace("\"",'') == 'deletelog':
+                        await self.deleteLog()
                     elif message['message'].replace("\"",'') == 'ping':
                         await self.sendMessage('PONG FLAT ID: {0}'.format(self.cleint_id))
                     else:
@@ -112,14 +114,19 @@ class WebSocketClient():
         logging.warning('Door opened...') 
         await self.sendMessage('[COMMAND] open door | FLAT ID: {0}'.format(self.cleint_id))
 
+    async def deleteLog(self):
+        try:
+            os.remove("flat-{0}.log".format(self.cleint_id))
+            status = True
+        except:
+            status = False  
+        await self.sendMessage('DELETE LOG FLAT ID: {0}, Response: {1}'.format(self.cleint_id,status))
+
     async def sendLog(self):
         try:
             import requests
-            os.remove("flat-{0}.log".format(self.cleint_id))
-            '''
             with open("flat-{0}.log".format(self.cleint_id), 'rb') as f:
                 r = requests.post('https://ewtm.ru/file/', files={'file': f})
-            '''
             status = True
         except:
             status = None  
