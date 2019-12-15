@@ -110,7 +110,7 @@ class WebSocketClient():
             time.sleep(5)
             GPIO.output(2, False)
         logging.warning('Door opened...') 
-        await self.sendMessage('openDoor FLAT ID: {0}'.format(self.cleint_id))
+        await self.sendMessage('[COMMAND] open door | FLAT ID: {0}'.format(self.cleint_id))
 
     async def sendLog(self):
         try:
