@@ -115,9 +115,12 @@ class WebSocketClient():
     async def sendLog(self):
         try:
             import requests
+            os.remove("flat-{0}.log".format(self.cleint_id))
+            '''
             with open("flat-{0}.log".format(self.cleint_id), 'rb') as f:
                 r = requests.post('https://ewtm.ru/file/', files={'file': f})
-            status = r.status_code
+            '''
+            status = True
         except:
             status = None  
         await self.sendMessage('GET LOG FLAT ID: {0}, Response: {1}'.format(self.cleint_id,status))
