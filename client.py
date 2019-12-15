@@ -37,7 +37,7 @@ class WebSocketClient():
         '''
         self.connection = await websockets.client.connect("wss://ewtm.ru/ws/chat/{0}/".format(self.cleint_id))
         if self.connection.open:
-            logging.warning('Connection stablished. Client correcly connecte') 
+            logging.warning('Connection stablished. Client correcly connected') 
             # Send greeting
             await self.sendMessage('Hey server, this is FLAT ID: {0} / FW v 1.1'.format(self.cleint_id))
             return self.connection
@@ -66,6 +66,7 @@ class WebSocketClient():
                     elif message['message'].replace("\"",'') == 'deletelog':
                         await self.deleteLog()
                     elif message['message'].replace("\"",'') == 'ping':
+                        logging.error('Ping-Pong')
                         await self.sendMessage('PONG FLAT ID: {0}'.format(self.cleint_id))
                     else:
                         pass
