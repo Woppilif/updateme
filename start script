@@ -1,0 +1,27 @@
+[Unit]
+Description=Blink Service
+After=multi-user.target
+Conflicts=getty@tty1.service
+
+[Service]
+Restart=on-failure
+Type=simple
+WorkingDirectory=/home/pi/updateme
+ExecStart=python3 /home/pi/updateme/client.py
+StandardInput=tty-force
+User=pi
+Group=pi
+
+[Install]
+WantedBy=multi-user.target
+
+
+sudo nano /lib/systemd/system/blink.service
+sudo systemctl daemon-reload
+
+sudo systemctl enable blink.service
+sudo systemctl start blink.service
+
+sudo systemctl stop blink.service          #To stop running service 
+sudo systemctl start blink.service         #To start running service 
+sudo systemctl restart blink.service 
