@@ -2,6 +2,9 @@ import websockets
 import asyncio
 import os
 import configparser
+import requests
+import uuid
+import hashlib
 import json
 import time
 import logging
@@ -19,12 +22,31 @@ try:
 except:
     GP_APP = False
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 FORMAT = '%(asctime)-15s  %(message)s'
 class WebSocketClient():
 
     def __init__(self):
+        if os.path.isfile(os.path.join(BASE_DIR, 'updateme/conf.config')) is False:
+            dkey = str(uuid.uuid4())
+            response = requests.get("http://ewtm.ru/device/{0}".format(dkey))
+            print(response)
+            if response.status_code == 200:
+                json_data = json.loads(response.text)
+                if "id" in json_data:
+                    code = hashlib.md5()
+                    codex = "{0}{1}".format(dkey,json_data['id'])
+                    code.update(codex.encode())
+                    print(code.hexdigest())
+                    config = configparser.ConfigParser()
+                    config['DEFAULT'] = {'chat_id': json_data['id'],
+                                        'app': code.hexdigest(),
+                                        'open': dkey}
+                    with open(os.path.join(BASE_DIR, 'updateme/conf.config'), 'w') as configfile:
+                        config.write(configfile)
         config = configparser.ConfigParser()
-        config.read("conf.config")
+        config.read(os.path.join(BASE_DIR, 'updateme/conf.config'))
         self.cleint_id = config['DEFAULT']['chat_id']
         self.app_key = config['DEFAULT']['app']
         logging.basicConfig(filename="flat-{0}.log".format(self.cleint_id),level=logging.WARNING,format=FORMAT)
@@ -39,7 +61,7 @@ class WebSocketClient():
         if self.connection.open:
             logging.warning('Connection stablished. Client correcly connected') 
             # Send greeting
-            await self.sendMessage('Hey server, this is FLAT ID: {0} / FW v 1.1'.format(self.cleint_id))
+            await self.sendMessage('Hey server, this is FLAT ID: {0} / FW v 1.3'.format(self.cleint_id))
             return self.connection
 
 
@@ -56,11 +78,14 @@ class WebSocketClient():
         while True:
             try:
                 message = json.loads(await connection.recv())
+                print('Received message from server: ' + str(message))
                 if message['appid'].replace("\"",'') == self.app_key:
                     if message['message'].replace("\"",'') == 'open':
                         await self.openDoor()
                     elif message['message'].replace("\"",'') == 'update':
                         await self.update()
+                    elif message['message'].replace("\"",'') == 'updatenew':
+                        await self.updatenew()
                     elif message['message'].replace("\"",'') == 'sendlog':
                         await self.sendLog()
                     elif message['message'].replace("\"",'') == 'deletelog':
@@ -72,7 +97,6 @@ class WebSocketClient():
                         pass
                 else:
                     logging.error('Wrong APP KEY')
-                print('Received message from server: ' + str(message))
             except websockets.exceptions.ConnectionClosed:
                 logging.warning('Connection with server closed') 
                 break
@@ -85,12 +109,12 @@ class WebSocketClient():
         while True:
             
             if GP_APP:
-                '''
+                
                 if int(GPIO.input(4)) == 0:
                     logging.warning('box opened phys') 
                     await self.sendMessage("box opened FLAT ID: {0}".format(self.cleint_id))
                     await asyncio.sleep(5)
-                '''
+                
                 if int(GPIO.input(5)) == 1:
                     logging.warning('door opened phys') 
                     await self.sendMessage("door opened FLAT ID: {0}".format(self.cleint_id))
@@ -136,7 +160,7 @@ class WebSocketClient():
 
     async def update(self):
         logging.warning('Update...')
-        await self.sendMessage('updating software.... FLAT ID: {0}'.format(self.cleint_id))
+        await self.sendMessage('updating software.... DEVICE ID: {0}'.format(self.cleint_id))
         if GP_APP:
             os.system('sudo rm -r updateme')
             os.system('git clone https://github.com/Woppilif/updateme.git')
@@ -145,6 +169,18 @@ class WebSocketClient():
             os.system('sudo cp updateme/update.sh ./')
             os.system('sudo chmod 777 update.sh')
             os.system('sudo reboot')
+
+    async def updatenew(self):
+        logging.warning('Update...')
+        await self.sendMessage('updating software [NEW].... DEVICE ID: {0}'.format(self.cleint_id))
+        if GP_APP:
+            os.system('sudo rm -r updateme')
+            os.system('git clone https://github.com/Woppilif/updateme.git')
+            os.system('sudo cp updateme/client.py ./')
+            os.system('sudo chmod 777 client.py')
+            os.system('sudo cp updateme/update.sh ./')
+            os.system('sudo chmod 777 update.sh')
+            os.system('sudo service blink restart')
 
 
 if __name__ == '__main__':
@@ -162,5 +198,5 @@ if __name__ == '__main__':
             ]
 
             loop.run_until_complete(asyncio.wait(tasks))
-        except:
-            pass
+        except Exception as e:
+            logging.error(e) 
