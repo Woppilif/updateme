@@ -59,7 +59,7 @@ async def connect(url,id):
         connection = await websockets.client.connect("wss://{0}/ws/chat/{1}/".format(url,id))
         if connection.open:
             print("connecting")
-            connection.send('Hey server, this is DEVICE ID: {0} / FW v 2.0'.format(id))
+            await connection.send('Hey server, this is DEVICE ID: {0} / FW v 2.0'.format(id))
             return connection
     except:
         print("reconnecting")
