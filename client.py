@@ -96,7 +96,7 @@ async def deleteLog(self):
     await sendMessage('DELETE LOG FLAT ID: {0}, Response: {1}'.format(cleint_id,status))
 '''
 
-def update(self):
+def update():
     if GP_APP:
         os.system('sudo rm -r updateme')
         os.system('git clone https://github.com/Woppilif/updateme.git')
@@ -105,8 +105,9 @@ def update(self):
         os.system('sudo cp updateme/update.sh ./')
         os.system('sudo chmod 777 update.sh')
         os.system('sudo reboot')
+    return "Updating"
 
-def updatenew(self):
+def updatenew():
     if GP_APP:
         os.system('sudo rm -r updateme')
         os.system('git clone https://github.com/Woppilif/updateme.git')
@@ -115,6 +116,7 @@ def updatenew(self):
         #os.system('sudo cp updateme/update.sh ./')
         #os.system('sudo chmod 777 update.sh')
         os.system('sudo service blink restart')
+    return "Updating"
 
 def command(command):
     commands = {
