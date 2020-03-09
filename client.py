@@ -118,11 +118,15 @@ def updatenew():
         os.system('sudo service blink restart')
     return "Updating"
 
+def checkping():
+    return "Ping-Pong"
+
 def command(command):
     commands = {
         "open":openDoor,
         "update":update,
-        "updatenew":updatenew
+        "updatenew":updatenew,
+        "ping":checkping
     }
     if command not in commands:
         return "Keine"
